@@ -1,0 +1,22 @@
+PODS:
+  - Flutter (1.0.0)
+  - indicator_navbar (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - indicator_navbar (from `.symlinks/plugins/indicator_navbar/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  indicator_navbar:
+    :path: ".symlinks/plugins/indicator_navbar/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
+  indicator_navbar: 1635384806a6b2ae363dec86d045a044a45c3266
+
+PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+
+COCOAPODS: 1.10.1
