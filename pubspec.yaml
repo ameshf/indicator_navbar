@@ -1,6 +1,6 @@
 name: indicator_navbar
 description: A new Flutter project.
-version: 0.0.1
+version: 0.0.1+1
 homepage: https://github.com/ameshf/indicator_navbar.git
 
 environment:
@@ -35,7 +35,6 @@ flutter:
         pluginClass: IndicatorNavbarPlugin
       web:
         pluginClass: IndicatorNavbarPlugin
-        fileName: indicator_navbar.dart
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:
