@@ -141,7 +141,6 @@ class CustomBottomIndicatorBar extends StatefulWidget {
   /// If [BottomNavigationBarThemeData.elevation] is null, defaults to `8.0`.
   final double? elevation;
 
-
   CustomBottomIndicatorBar({
     Key? key,
     required this.onTap,
@@ -180,6 +179,8 @@ class _CustomBottomIndicatorBarState extends State<CustomBottomIndicatorBar> {
   double width = 0;
   late Color indicatorColor;
   late Color activeColor;
+  late TextStyle activeLabelTextTheme;
+  late TextStyle inactiveLabelTextTheme;
   late Color inactiveColor;
   late Color shadowColor;
   late Color backgroundColor;
@@ -209,11 +210,14 @@ class _CustomBottomIndicatorBarState extends State<CustomBottomIndicatorBar> {
     width = MediaQuery.of(context).size.width;
     activeColor = widget.activeColor??
         bottomTheme.selectedItemColor?? themeData.indicatorColor;
-    indicatorColor = widget.indicatorColor??
-        bottomTheme.selectedItemColor?? themeData.indicatorColor;
     inactiveColor = widget.inactiveColor??
         bottomTheme.unselectedItemColor??
         themeData.unselectedWidgetColor;
+    activeLabelTextTheme = widget.selectedLabelStyle?? bottomTheme.selectedLabelStyle ?? TextStyle(color: widget.activeColor);
+    inactiveLabelTextTheme = widget.unselectedLabelStyle?? bottomTheme.unselectedLabelStyle ?? TextStyle(color: widget.inactiveColor);
+    indicatorColor = widget.indicatorColor??
+        bottomTheme.selectedItemColor?? themeData.indicatorColor;
+
     shadowColor = widget.shadowColor??
         themeData.shadowColor;
     backgroundColor = widget.backgroundColor??
@@ -295,8 +299,8 @@ class _CustomBottomIndicatorBarState extends State<CustomBottomIndicatorBar> {
         : showUnselectItemLabel? item.label?? "" : "";
 
     TextStyle style = isSelected ?
-    widget.selectedLabelStyle ?? TextStyle(color: activeColor)
-        : widget.unselectedLabelStyle ?? TextStyle(color: inactiveColor);
+    activeLabelTextTheme
+        : inactiveLabelTextTheme;
 
     return Text(label, maxLines: 1, overflow: TextOverflow.ellipsis, style: style);
   }
